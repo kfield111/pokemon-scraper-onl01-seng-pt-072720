@@ -25,7 +25,7 @@ class Pokemon
     id = pokemon_search[0]
     name = pokemon_search[1]
     type = pokemon_search[2]
-    Pokemon.new (id, name, type)
+    pokemon = Pokemon.new (id, name, type)
   end
 
 
