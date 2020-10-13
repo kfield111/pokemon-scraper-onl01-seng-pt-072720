@@ -28,7 +28,8 @@ class Pokemon
 
    pokemon = Pokemon.new(name, type)
    pokemon
- end.first
+  end.first
+end
 
 
 end
