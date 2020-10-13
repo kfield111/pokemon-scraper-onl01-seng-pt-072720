@@ -25,7 +25,7 @@ class Pokemon
     SQL
 
     new_pokemon = db.execute(sql, id)
-    testy = Pokemon.new(new_pokemon)
+    testy = Pokemon.new(new_pokemon).flatten
     testy
     binding.pry
   end
