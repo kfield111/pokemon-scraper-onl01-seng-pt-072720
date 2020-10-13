@@ -18,9 +18,8 @@ class Pokemon
     pokemon = database_connection.execute("SELECT * FROM pokemon WHERE id = ?", id).flatten
     name = pokemon[1]
     type = pokemon[2]
-    hp = pokemon[3]
 
-    pokemon_inst = Pokemon.new(id: id, name: name, type: type, hp: hp, db: db)
+    pokemon_inst = Pokemon.new(id: id, name: name, type: type, db: db)
   end
 
 
