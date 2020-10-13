@@ -18,15 +18,10 @@ class Pokemon
 
   def self.find(id, db)
     sql = <<-SQL
-      SELECT *
-      FROM pokemon
-      WHERE id = ?
-      LIMIT 1
+      SELECT * FROM pokemon WHERE id = (?);
     SQL
-
-    new_pokemon = db.execute(sql, id).flatten
-    testy = Pokemon.new(new_pokemon)
-    binding.pry
+    pokemon = db.execute(sql, [id]).flatten
+    Pokemon.new(id, pokemon[1], pokemon[2], pokemon[3], db )
   end
 
 
