@@ -21,15 +21,13 @@ class Pokemon
     WHERE id = ?
     SQL
 
-  db.execute.(sql, id).map do |temp|
-   id = temp[0]
-   name = temp[1]
-   type = temp[2]
-
-   pokemon = Pokemon.new(name, type)
-   pokemon
-  end.first
-end
+    db.execute.(sql, id).map do |temp|
+      id = temp[0]
+      name = temp[1]
+      type = temp[2]
+      pokemon = Pokemon.new(name, type)
+    end.first
+  end
 
 
 end
