@@ -5,7 +5,9 @@ class Pokemon
     @pokemon = pokemon
   end
 
+  def save
 
+  end
 
 
 end
