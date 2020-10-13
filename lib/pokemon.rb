@@ -27,6 +27,7 @@ class Pokemon
    type = new_pokemon[2]
 
    pokemon = Pokemon.new (id, name, type)
+   pokemon
   end
 
 
