@@ -21,9 +21,12 @@ class Pokemon
     WHERE id = ?
     SQL
 
-    db.execute.(sql, id).flatten
-    Pokemon.new
-
+    pokemon_search = db.execute.(sql, id).flatten
+    id = pokemon_search[0]
+    name = pokemon_search[1]
+    type = pokemon_search[2]
+    Pokemon.new (id, name, type, db)
+  end
 
 
 end
