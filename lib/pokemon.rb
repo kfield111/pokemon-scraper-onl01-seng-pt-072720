@@ -26,6 +26,7 @@ class Pokemon
       if temp.id == id
         pokemon = Pokemon.new(new_pokemon)
       end
+    end
   end
 
 
