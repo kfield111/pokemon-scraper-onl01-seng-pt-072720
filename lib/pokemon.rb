@@ -14,14 +14,13 @@ class Pokemon
     db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
 
-  def self.find (id, db)
-    sql = <<-SQL
-    SELECT *
-    FROM pokemon
-    WHERE id = ?
-    SQL
+  def self.find(id, db)
+    pokemon = database_connection.execute("SELECT * FROM pokemon WHERE id = ?", id).flatten
+    name = pokemon[1]
+    type = pokemon[2]
+    hp = pokemon[3]
 
-    db.execute.(sql, id)
+    pokemon_inst = Pokemon.new(id: id, name: name, type: type, hp: hp, db: db)
   end
 
 
