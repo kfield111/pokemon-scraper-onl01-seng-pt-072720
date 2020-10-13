@@ -25,7 +25,6 @@ class Pokemon
     SQL
 
     new_pokemon = db.execute(sql, id)
-    binding.pry
   end
 
 
