@@ -22,9 +22,10 @@ class Pokemon
       LIMIT 1
     SQL
 
-    new_pokemon = db.execute(sql, id)
-
-    pokemon = Pokemon.new(new_pokemon)
+    new_pokemon = db.execute(sql, id).map do |temp|
+      if temp.id == id
+        pokemon = Pokemon.new(new_pokemon)
+      end
   end
 
 
