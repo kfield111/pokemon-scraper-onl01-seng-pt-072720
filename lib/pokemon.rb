@@ -1,11 +1,11 @@
 class Pokemon
-  attr_accessor :id, :name, :type, :db
+  attr_accessor :id, :name, :type
 
   def initialize (pokemon)
     @pokemon = pokemon
   end
 
-  def self.save (name, type, db)
+  def self.save (name, type)
     sql = <<-SQL
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
