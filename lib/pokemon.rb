@@ -21,8 +21,8 @@ class Pokemon
     WHERE id = ?
     SQL
 
-    pokemon_serach = db.execute.(sql, id).first
-  end
+    pokemon_serach = db.execute.(sql, id)
+  end.first
 
 
 
