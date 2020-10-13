@@ -1,3 +1,5 @@
+require 'pry'
+
 class Pokemon
   attr_accessor :id, :name, :type, :db
 
@@ -22,11 +24,8 @@ class Pokemon
       LIMIT 1
     SQL
 
-    new_pokemon = db.execute(sql, id).map do |temp|
-      if temp.id == id
-        pokemon = Pokemon.new(new_pokemon)
-      end
-    end
+    new_pokemon = db.execute(sql, id)
+    binding.pry
   end
 
 
