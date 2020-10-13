@@ -24,7 +24,7 @@ class Pokemon
       LIMIT 1
     SQL
 
-    new_pokemon = db.execute(sql, id)
+    new_pokemon = db.execute(sql, id).flatten
     testy = Pokemon.new(new_pokemon)
     testy
     binding.pry
