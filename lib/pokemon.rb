@@ -21,12 +21,12 @@ class Pokemon
     WHERE id = ?
     SQL
 
-   new_pokemon = db.execute.(sql, id)
+   new_pokemon = db.execute.(sql)
    id = new_pokemon[0]
    name = new_pokemon[1]
    type = new_pokemon[2]
 
-   pokemon = Pokemon.new(name, type, id)
+   pokemon = Pokemon.new(name, type)
    pokemon
   end
 
